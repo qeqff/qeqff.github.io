@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Xavier Henderson Portfolio</title>
+  <title>Portfolio</title>
 
   <style>
     body {
@@ -19,24 +19,11 @@
 
     /* HERO */
     .hero {
-      display: flex;
-      gap: 20px;
       background: white;
       padding: 30px;
       border-radius: 16px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.06);
       margin-bottom: 20px;
-    }
-
-    .hero-left {
-      flex: 2;
-    }
-
-    .hero-right {
-      flex: 1;
-      background: #f3f4f6;
-      padding: 15px;
-      border-radius: 12px;
     }
 
     h1 {
@@ -49,17 +36,7 @@
       margin-top: 8px;
     }
 
-    .tag {
-      display: inline-block;
-      background: #e0e7ff;
-      color: #3730a3;
-      padding: 6px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      margin: 4px 4px 0 0;
-    }
-
-    /* SECTIONS */
+    /* SECTION */
     .section {
       background: white;
       padding: 25px;
@@ -72,25 +49,50 @@
       margin-top: 0;
     }
 
-    /* CARDS */
+    /* GRID */
     .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 15px;
     }
 
-    .mini-card {
+    /* PROJECT CARD */
+    .card {
       background: #f9fafb;
       padding: 15px;
       border-radius: 12px;
       border-left: 4px solid #6366f1;
     }
 
-    @media (max-width: 700px) {
-      .hero {
-        flex-direction: column;
-      }
+    .card h3 {
+      margin-top: 0;
+    }
 
+    .tag {
+      display: inline-block;
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 4px 8px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-right: 5px;
+      margin-top: 5px;
+    }
+
+    /* CUSTOM PROJECT CARD */
+    .highlight {
+      background: #111827;
+      color: white;
+      border-left: 4px solid #22c55e;
+    }
+
+    .highlight .tag {
+      background: #22c55e;
+      color: black;
+    }
+
+    /* RESPONSIVE MOBILE STACK */
+    @media (max-width: 800px) {
       .grid {
         grid-template-columns: 1fr;
       }
@@ -104,75 +106,58 @@
 
   <!-- HERO -->
   <div class="hero">
-
-    <div class="hero-left">
-      <h1>Xavier Henderson</h1>
-      <p class="subtitle">
-        Food Science Student focused on food systems, plant growth, and real-world hands-on experience through work, gardening, and volunteering.
-      </p>
-
-      <div style="margin-top:10px;">
-        <span class="tag">Food Science</span>
-        <span class="tag">Gardening</span>
-        <span class="tag">Retail</span>
-        <span class="tag">Cooking</span>
-        <span class="tag">Volunteering</span>
-      </div>
-    </div>
-
-    <div class="hero-right">
-      <strong>Focus Areas</strong>
-      <p>• Food systems<br>• Plant growth<br>• Customer service<br>• Hands-on learning</p>
-    </div>
-
-  </div>
-
-  <!-- ABOUT -->
-  <div class="section">
-    <h2>About Me</h2>
-    <p>
-      I am a college student exploring food science as a potential major.
-      I prefer hands-on environments where I can connect science with real-world applications,
-      especially in food preparation, agriculture, and customer-facing work.
+    <h1>Xavier Henderson</h1>
+    <p class="subtitle">
+      Food Science focused student exploring real-world systems in food, plants, and retail environments.
     </p>
   </div>
 
-  <!-- EXPERIENCE GRID -->
+  <!-- ACTIVITIES / PROJECTS -->
   <div class="section">
-    <h2>Experience</h2>
+    <h2>Activities & Projects</h2>
 
     <div class="grid">
 
-      <div class="mini-card">
-        <h3>Retail Work</h3>
-        <p>Customer service, stocking, organization, and working in fast-paced environments.</p>
+      <!-- Project 1 -->
+      <div class="card">
+        <h3>Gardening Log</h3>
+        <p>Tracked plant growth and learned environmental effects on development.</p>
+        <span class="tag">Observation</span>
+        <span class="tag">Consistency</span>
       </div>
 
-      <div class="mini-card">
-        <h3>Gardening</h3>
-        <p>Plant care, growth observation, consistency, and understanding environmental impact.</p>
+      <!-- Project 2 -->
+      <div class="card">
+        <h3>Retail Experience</h3>
+        <p>Customer service, stocking systems, and fast-paced work environments.</p>
+        <span class="tag">Communication</span>
+        <span class="tag">Organization</span>
       </div>
 
-      <div class="mini-card">
-        <h3>Volunteering</h3>
-        <p>Community support roles building teamwork, responsibility, and communication skills.</p>
+      <!-- Project 3 -->
+      <div class="card">
+        <h3>Volunteering Work</h3>
+        <p>Community support tasks building teamwork and responsibility.</p>
+        <span class="tag">Teamwork</span>
+        <span class="tag">Leadership</span>
       </div>
 
-      <div class="mini-card">
-        <h3>Cooking Interest</h3>
-        <p>Experimenting with food preparation and learning how ingredients interact.</p>
+      <!-- CUSTOM PROJECT CARD -->
+      <div class="card highlight">
+        <h3>Food System Exploration (Custom Project)</h3>
+
+        <p><b>Hook:</b> How does food move from raw ingredients to finished products people consume daily?</p>
+
+        <p><b>Tech / Tools:</b> Observation, research, real-world analysis, cooking experimentation</p>
+
+        <p><b>Proof:</b> Personal experiments in cooking + studying ingredient behavior + observing food handling in retail environments</p>
+
+        <span class="tag">Food Science</span>
+        <span class="tag">Systems Thinking</span>
+        <span class="tag">Real-world Analysis</span>
       </div>
 
     </div>
-  </div>
-
-  <!-- GOALS -->
-  <div class="section">
-    <h2>Goals</h2>
-    <p>
-      My goal is to pursue food science and develop skills in food production, safety, and systems.
-      I want to understand how food moves from raw materials to finished products in real environments.
-    </p>
   </div>
 
 </div>
