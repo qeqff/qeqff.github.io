@@ -7,35 +7,60 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      color: #1f2937;
+      background: #f5f7fb;
+      color: #111827;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       padding: 40px 20px;
     }
 
-    .header {
+    /* HERO */
+    .hero {
+      display: flex;
+      gap: 20px;
       background: white;
       padding: 30px;
       border-radius: 16px;
-      margin-bottom: 20px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
     }
 
-    .header h1 {
+    .hero-left {
+      flex: 2;
+    }
+
+    .hero-right {
+      flex: 1;
+      background: #f3f4f6;
+      padding: 15px;
+      border-radius: 12px;
+    }
+
+    h1 {
       margin: 0;
-      font-size: 32px;
+      font-size: 34px;
     }
 
-    .header p {
-      margin-top: 8px;
+    .subtitle {
       color: #4b5563;
+      margin-top: 8px;
     }
 
-    .card {
+    .tag {
+      display: inline-block;
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin: 4px 4px 0 0;
+    }
+
+    /* SECTIONS */
+    .section {
       background: white;
       padding: 25px;
       border-radius: 16px;
@@ -45,21 +70,30 @@
 
     h2 {
       margin-top: 0;
-      color: #111827;
     }
 
-    ul {
-      padding-left: 20px;
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
     }
 
-    .tag {
-      display: inline-block;
-      background: #e5e7eb;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      margin-right: 6px;
-      margin-top: 6px;
+    .mini-card {
+      background: #f9fafb;
+      padding: 15px;
+      border-radius: 12px;
+      border-left: 4px solid #6366f1;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -68,88 +102,76 @@
 
 <div class="container">
 
-  <!-- HEADER -->
-  <div class="header">
-    <h1>Xavier Henderson</h1>
-    <p>Food Science Student | Gardening | Cooking | Retail Experience | Volunteer Work</p>
+  <!-- HERO -->
+  <div class="hero">
 
-    <div>
-      <span class="tag">Gardening</span>
-      <span class="tag">Food Science Interest</span>
-      <span class="tag">Cooking</span>
-      <span class="tag">Retail</span>
-      <span class="tag">Volunteering</span>
+    <div class="hero-left">
+      <h1>Xavier Henderson</h1>
+      <p class="subtitle">
+        Food Science Student focused on food systems, plant growth, and real-world hands-on experience through work, gardening, and volunteering.
+      </p>
+
+      <div style="margin-top:10px;">
+        <span class="tag">Food Science</span>
+        <span class="tag">Gardening</span>
+        <span class="tag">Retail</span>
+        <span class="tag">Cooking</span>
+        <span class="tag">Volunteering</span>
+      </div>
     </div>
+
+    <div class="hero-right">
+      <strong>Focus Areas</strong>
+      <p>• Food systems<br>• Plant growth<br>• Customer service<br>• Hands-on learning</p>
+    </div>
+
   </div>
 
   <!-- ABOUT -->
-  <div class="card">
+  <div class="section">
     <h2>About Me</h2>
     <p>
-      I am a college student currently exploring food science as a potential major.
-      I enjoy hands-on learning experiences, especially in environments related to food,
-      plants, and customer interaction. My goal is to build practical skills that connect
-      science with real-world food systems.
+      I am a college student exploring food science as a potential major.
+      I prefer hands-on environments where I can connect science with real-world applications,
+      especially in food preparation, agriculture, and customer-facing work.
     </p>
   </div>
 
-  <!-- SKILLS -->
-  <div class="card">
-    <h2>Skills</h2>
-    <ul>
-      <li>Customer service and retail communication</li>
-      <li>Plant care and gardening experience</li>
-      <li>Cooking and food preparation</li>
-      <li>Teamwork from sports (soccer, tennis)</li>
-      <li>Time management from school and work balance</li>
-    </ul>
-  </div>
-
-  <!-- EXPERIENCE -->
-  <div class="card">
+  <!-- EXPERIENCE GRID -->
+  <div class="section">
     <h2>Experience</h2>
 
-    <h3>Retail Work</h3>
-    <p>
-      Worked in a retail environment assisting customers, organizing inventory,
-      and maintaining store presentation. Developed strong communication skills,
-      responsibility, and the ability to work in fast-paced environments.
-    </p>
+    <div class="grid">
 
-    <h3>Gardening Experience</h3>
-    <p>
-      Gained hands-on experience growing and maintaining plants. Learned how
-      environmental conditions affect plant growth and developed patience,
-      consistency, and attention to detail through ongoing care routines.
-    </p>
+      <div class="mini-card">
+        <h3>Retail Work</h3>
+        <p>Customer service, stocking, organization, and working in fast-paced environments.</p>
+      </div>
 
-    <h3>Volunteering</h3>
-    <p>
-      Participated in volunteer activities that involved helping others in community
-      settings. Built teamwork skills, reliability, and a stronger sense of responsibility
-      through consistent participation.
-    </p>
-  </div>
+      <div class="mini-card">
+        <h3>Gardening</h3>
+        <p>Plant care, growth observation, consistency, and understanding environmental impact.</p>
+      </div>
 
-  <!-- INTERESTS -->
-  <div class="card">
-    <h2>Interests</h2>
-    <ul>
-      <li>Cooking and experimenting with food</li>
-      <li>Understanding how food is produced and processed</li>
-      <li>Gardening and plant growth systems</li>
-      <li>Reading and learning independently</li>
-      <li>Gaming and strategy-based thinking</li>
-    </ul>
+      <div class="mini-card">
+        <h3>Volunteering</h3>
+        <p>Community support roles building teamwork, responsibility, and communication skills.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Cooking Interest</h3>
+        <p>Experimenting with food preparation and learning how ingredients interact.</p>
+      </div>
+
+    </div>
   </div>
 
   <!-- GOALS -->
-  <div class="card">
+  <div class="section">
     <h2>Goals</h2>
     <p>
-      My goal is to pursue food science and gain experience in food production,
-      safety, and preparation systems. I want to build a career that connects
-      science with real-world food applications.
+      My goal is to pursue food science and develop skills in food production, safety, and systems.
+      I want to understand how food moves from raw materials to finished products in real environments.
     </p>
   </div>
 
