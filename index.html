@@ -23,7 +23,6 @@
     header {
       padding: 60px 20px;
       text-align: center;
-      animation: fadeDown 1s ease-out;
     }
 
     header h1 {
@@ -42,7 +41,6 @@
       justify-content: center;
       gap: 20px;
       padding: 20px;
-      animation: fadeIn 1.5s ease;
     }
 
     nav a {
@@ -57,14 +55,12 @@
     nav a:hover {
       background: #38bdf8;
       color: #0f172a;
-      transform: translateY(-2px);
     }
 
     section {
       max-width: 900px;
       margin: 40px auto;
       padding: 20px;
-      animation: fadeUp 1s ease;
     }
 
     .card {
@@ -73,12 +69,15 @@
       border-radius: 12px;
       margin-bottom: 20px;
       border: 1px solid rgba(255,255,255,0.1);
-      transition: 0.3s;
     }
 
-    .card:hover {
-      transform: scale(1.02);
-      border-color: #38bdf8;
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 12px 0;
+      opacity: 0.95;
     }
 
     h2 {
@@ -96,48 +95,10 @@
       padding: 40px;
       color: #64748b;
     }
-
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .blob {
-      position: fixed;
-      width: 300px;
-      height: 300px;
-      background: #38bdf8;
-      filter: blur(120px);
-      opacity: 0.2;
-      border-radius: 50%;
-      animation: float 8s infinite ease-in-out;
-      z-index: -1;
-    }
-
-    .blob:nth-child(1) { top: 10%; left: 10%; }
-    .blob:nth-child(2) { bottom: 10%; right: 10%; background: #a78bfa; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-30px); }
-    }
   </style>
 </head>
 
 <body>
-
-  <div class="blob"></div>
-  <div class="blob"></div>
 
   <header>
     <h1>XAVIER</h1>
@@ -154,18 +115,18 @@
   <section id="about">
     <div class="card">
       <h2>About Me</h2>
+
+      <img src="https://images.unsplash.com/photo-1581093458791-9d42e3a0a6a3" />
+
       <p>
         I am Xavier Henderson, a 17-year-old college student working toward my associate’s degree.
-        I have hands-on experience in gardening, retail, and teamwork-based environments. I enjoy
-        learning through practical work and applying real-world problem solving.
+        I enjoy hands-on learning in real environments like retail, gardening, and cooking.
       </p>
-      <br/>
-      <p>
-        My main academic interest is <strong>food science</strong>. I am especially interested in how food is
-        developed, preserved, and improved for nutrition and safety. I want to understand how ingredients
-        interact on a chemical level, how processing affects quality, and how agriculture connects to
-        food production systems. My long-term goal is to work in areas like food safety, product development,
-        or agricultural innovation.
+
+      <p style="margin-top:10px;">
+        My main interest is <strong>food science</strong>. I’m interested in how food is tested, improved,
+        and safely produced on a large scale. I want to understand the chemistry behind food,
+        nutrition systems, and agricultural production.
       </p>
     </div>
   </section>
@@ -173,13 +134,16 @@
   <section id="journey">
     <div class="card">
       <h2>My Journey</h2>
+
+      <img src="https://images.unsplash.com/photo-1461354464878-ad92f492a5a0" />
+
       <ul>
-        <li>High school graduate with an associate’s degree in progress</li>
-        <li>5 years of soccer experience developing teamwork and discipline</li>
-        <li>1 year of tennis experience building coordination and focus</li>
-        <li>Retail experience focused on customer service and responsibility</li>
-        <li>Gardening experience involving plant care, growth cycles, and maintenance</li>
-        <li>Actively exploring food science as a long-term career path</li>
+        <li>High school graduate with associate’s degree in progress</li>
+        <li>5 years soccer experience (teamwork & discipline)</li>
+        <li>1 year tennis experience (focus & coordination)</li>
+        <li>Retail experience in customer service and responsibility</li>
+        <li>Gardening experience with plant care and growth cycles</li>
+        <li>Exploring food science as a career path</li>
       </ul>
     </div>
   </section>
@@ -187,13 +151,15 @@
   <section id="skills">
     <div class="card">
       <h2>Skills</h2>
+
+      <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba" />
+
       <ul>
-        <li>Plant care, gardening, and basic agricultural knowledge</li>
-        <li>Customer service and communication (retail experience)</li>
-        <li>Team collaboration from sports and volunteer work</li>
-        <li>Basic cooking and food preparation understanding</li>
-        <li>Time management, responsibility, and adaptability</li>
-        <li>Willingness to learn technical/scientific concepts in food systems</li>
+        <li>Gardening and plant care knowledge</li>
+        <li>Customer service and communication</li>
+        <li>Teamwork from sports and volunteering</li>
+        <li>Basic cooking and food prep understanding</li>
+        <li>Time management and adaptability</li>
       </ul>
     </div>
   </section>
@@ -201,6 +167,9 @@
   <section id="contact">
     <div class="card">
       <h2>Contact</h2>
+
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216" />
+
       <p>Email: xavieraskia@outlook.com</p>
       <p>Location: Maryland, USA</p>
     </div>
