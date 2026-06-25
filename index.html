@@ -1,164 +1,380 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xavier Henderson Portfolio</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #111827;
-    }
+<style>
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    /* HERO */
-    .hero {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      margin-bottom: 20px;
-    }
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f7fb;
+    color:#111827;
+    line-height:1.7;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 34px;
-    }
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
+}
 
-    .subtitle {
-      color: #4b5563;
-      margin-top: 8px;
-    }
+/* HERO */
 
-    /* SECTION */
-    .section {
-      background: white;
-      padding: 25px;
-      border-radius: 16px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    }
+.hero{
+    background:linear-gradient(135deg,#ffffff,#eef4ff);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    margin-bottom:25px;
+}
 
-    h2 {
-      margin-top: 0;
-    }
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
 
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
+.subtitle{
+    color:#4b5563;
+    font-size:1.1rem;
+    max-width:700px;
+}
 
-    /* PROJECT CARD */
-    .card {
-      background: #f9fafb;
-      padding: 15px;
-      border-radius: 12px;
-      border-left: 4px solid #6366f1;
-    }
+.hero-tags{
+    margin-top:20px;
+}
 
-    .card h3 {
-      margin-top: 0;
-    }
+.tag{
+    display:inline-block;
+    background:#e0e7ff;
+    color:#3730a3;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:.85rem;
+    margin-right:8px;
+    margin-bottom:8px;
+}
 
-    .tag {
-      display: inline-block;
-      background: #e0e7ff;
-      color: #3730a3;
-      padding: 4px 8px;
-      border-radius: 20px;
-      font-size: 12px;
-      margin-right: 5px;
-      margin-top: 5px;
-    }
+/* SECTION */
 
-    /* CUSTOM PROJECT CARD */
-    .highlight {
-      background: #111827;
-      color: white;
-      border-left: 4px solid #22c55e;
-    }
+.section{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 6px 20px rgba(0,0,0,.06);
+}
 
-    .highlight .tag {
-      background: #22c55e;
-      color: black;
-    }
+.section h2{
+    margin-bottom:15px;
+    color:#111827;
+}
 
-    /* RESPONSIVE MOBILE STACK */
-    @media (max-width: 800px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+.section h3{
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+/* PROJECT GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:#f9fafb;
+    padding:18px;
+    border-radius:14px;
+    border-left:4px solid #6366f1;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.card h3{
+    margin-top:0;
+}
+
+.highlight{
+    background:#111827;
+    color:white;
+    border-left:4px solid #22c55e;
+}
+
+.highlight .tag{
+    background:#22c55e;
+    color:black;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    color:#6b7280;
+    padding:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+.hero{
+    padding:25px;
+}
+
+.hero h1{
+    font-size:2.2rem;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Xavier Henderson</h1>
-    <p class="subtitle">
-      Food Science focused student exploring real-world systems in food, plants, and retail environments.
-    </p>
-  </div>
+<!-- HERO -->
 
-  <!-- ACTIVITIES / PROJECTS -->
-  <div class="section">
-    <h2>Activities & Projects</h2>
+<div class="hero">
 
-    <div class="grid">
+<h1>Xavier Henderson</h1>
 
-      <!-- Project 1 -->
-      <div class="card">
-        <h3>Gardening Log</h3>
-        <p>Tracked plant growth and learned environmental effects on development.</p>
-        <span class="tag">Observation</span>
-        <span class="tag">Consistency</span>
-      </div>
+<p class="subtitle">
+Food Science focused student exploring real-world systems in food,
+plants, and retail environments through cooking, gardening,
+volunteering, and hands-on learning experiences.
+</p>
 
-      <!-- Project 2 -->
-      <div class="card">
-        <h3>Retail Experience</h3>
-        <p>Customer service, stocking systems, and fast-paced work environments.</p>
-        <span class="tag">Communication</span>
-        <span class="tag">Organization</span>
-      </div>
+<div class="hero-tags">
+<span class="tag">Food Science</span>
+<span class="tag">Gardening</span>
+<span class="tag">Cooking</span>
+<span class="tag">Retail</span>
+<span class="tag">Volunteering</span>
+</div>
 
-      <!-- Project 3 -->
-      <div class="card">
-        <h3>Volunteering Work</h3>
-        <p>Community support tasks building teamwork and responsibility.</p>
-        <span class="tag">Teamwork</span>
-        <span class="tag">Leadership</span>
-      </div>
+</div>
 
-      <!-- CUSTOM PROJECT CARD -->
-      <div class="card highlight">
-        <h3>Food System Exploration (Custom Project)</h3>
+<!-- ABOUT -->
 
-        <p><b>Hook:</b> How does food move from raw ingredients to finished products people consume daily?</p>
+<div class="section">
 
-        <p><b>Tech / Tools:</b> Observation, research, real-world analysis, cooking experimentation</p>
+<h2>About Me</h2>
 
-        <p><b>Proof:</b> Personal experiments in cooking + studying ingredient behavior + observing food handling in retail environments</p>
+<p>
+I am a college student interested in food science, cooking, and hands-on
+learning experiences. I enjoy understanding how food, plants, and people
+interact within larger systems and how science can be applied to solve
+real-world challenges.
+</p>
 
-        <span class="tag">Food Science</span>
-        <span class="tag">Systems Thinking</span>
-        <span class="tag">Real-world Analysis</span>
-      </div>
+<br>
 
-    </div>
-  </div>
+<p>
+Through gardening, retail work, volunteering, and cooking, I have developed
+communication skills, responsibility, problem-solving abilities, and a
+growing interest in the science behind food production, food quality,
+and agricultural systems.
+</p>
+
+</div>
+
+<!-- EXPERIENCE -->
+
+<div class="section">
+
+<h2>Experience & Activities</h2>
+
+<h3>Gardening Experience</h3>
+
+<p>
+Gardening has taught me patience, consistency, and observation.
+Through caring for plants and monitoring their growth, I have gained
+a better understanding of how environmental factors influence living
+systems. I enjoy seeing how small adjustments in watering, sunlight,
+soil conditions, and maintenance practices can affect plant development
+over time.
+</p>
+
+<h3>Retail Experience</h3>
+
+<p>
+Working in retail has helped me develop customer service skills,
+communication, organization, and adaptability. Assisting customers
+and working in a fast-paced environment taught me how to solve problems
+while remaining professional and dependable.
+</p>
+
+<h3>Volunteer Work</h3>
+
+<p>
+Volunteering has strengthened my sense of responsibility and teamwork.
+Through supporting community activities, I learned the importance of
+helping others, contributing to larger goals, and working effectively
+with different groups of people.
+</p>
+
+</div>
+
+<!-- PROJECTS -->
+
+<div class="section">
+
+<h2>Activities & Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Gardening Log</h3>
+
+<p>
+Tracked plant growth patterns and observed how environmental conditions
+influenced development.
+</p>
+
+<span class="tag">Observation</span>
+<span class="tag">Consistency</span>
+
+</div>
+
+<div class="card">
+<h3>Retail Experience</h3>
+
+<p>
+Developed customer service, communication, and organizational skills
+through day-to-day retail operations.
+</p>
+
+<span class="tag">Communication</span>
+<span class="tag">Organization</span>
+
+</div>
+
+<div class="card">
+<h3>Volunteering Work</h3>
+
+<p>
+Participated in community-focused activities that strengthened teamwork,
+leadership, and responsibility.
+</p>
+
+<span class="tag">Teamwork</span>
+<span class="tag">Leadership</span>
+
+</div>
+
+<div class="card highlight">
+
+<h3>Understanding Food Through Cooking</h3>
+
+<p>
+<b>Hook:</b>
+How do ingredient choices, preparation methods, and cooking conditions
+affect the quality, safety, and characteristics of food?
+</p>
+
+<br>
+
+<p>
+<b>Tech / Tools:</b>
+Recipe analysis, cooking experimentation, observation,
+ingredient comparisons, temperature control, and research.
+</p>
+
+<br>
+
+<p>
+<b>Proof:</b>
+Through regular cooking practice, I experiment with ingredients and
+preparation techniques to understand how small changes influence flavor,
+texture, appearance, and overall food quality. These experiences have
+strengthened my interest in food science and encouraged me to learn more
+about the scientific processes behind food production.
+</p>
+
+<br>
+
+<span class="tag">Food Science</span>
+<span class="tag">Cooking</span>
+<span class="tag">Research</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOD SCIENCE -->
+
+<div class="section">
+
+<h2>Cooking & Food Science</h2>
+
+<p>
+Cooking has become one of my strongest interests because it combines
+creativity, problem-solving, and science. I enjoy learning how ingredients
+interact during preparation and how factors such as temperature,
+moisture, texture, and timing affect the final product.
+</p>
+
+<br>
+
+<p>
+Beyond following recipes, I like experimenting with different techniques
+and observing how changes in ingredients or preparation methods influence
+flavor, appearance, and consistency. These experiences have increased my
+interest in food science by helping me understand that food production
+involves chemistry, biology, safety, and quality control working together.
+</p>
+
+<br>
+
+<p>
+My long-term goal is to continue exploring the scientific side of food
+and gain experience in areas such as food development, food safety,
+nutrition, and food processing.
+</p>
+
+</div>
+
+<!-- FUTURE GOALS -->
+
+<div class="section">
+
+<h2>Future Goals</h2>
+
+<p>
+I hope to continue developing my understanding of food systems,
+food safety, product development, and food production processes
+through higher education and hands-on experiences.
+</p>
+
+<br>
+
+<p>
+My long-term goal is to combine scientific knowledge with practical
+problem-solving in a food-related career and contribute to improving
+the quality, safety, and accessibility of food.
+</p>
+
+</div>
+
+<div class="footer">
+Portfolio Website • Xavier Henderson
+</div>
 
 </div>
 
