@@ -1,281 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xavier Henderson Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Xavier Portfolio</title>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-body{
-    font-family: Arial, sans-serif;
-    background:#f5f7fb;
-    color:#111827;
-    line-height:1.7;
-}
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #f8fafc;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:40px 20px;
-}
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeDown 1s ease-out;
+    }
 
-.hero{
-    background:linear-gradient(135deg,#ffffff,#eef4ff);
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 8px 24px rgba(0,0,0,.08);
-    margin-bottom:25px;
-}
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
 
-.hero h1{
-    font-size:3rem;
-    margin-bottom:10px;
-    animation:slideInLeft 1s ease;
-}
+    header p {
+      margin-top: 10px;
+      color: #94a3b8;
+      font-size: 1.2rem;
+    }
 
-.subtitle{
-    color:#4b5563;
-    font-size:1.1rem;
-    max-width:700px;
-}
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      animation: fadeIn 1.5s ease;
+    }
 
-.hero-tags{margin-top:20px;}
+    nav a {
+      color: #f8fafc;
+      text-decoration: none;
+      padding: 8px 16px;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
 
-.tag{
-    display:inline-block;
-    background:#e0e7ff;
-    color:#3730a3;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:.85rem;
-    margin-right:8px;
-    margin-bottom:8px;
-    transition:all .25s ease;
-}
+    nav a:hover {
+      background: #38bdf8;
+      color: #0f172a;
+      transform: translateY(-2px);
+    }
 
-.tag:hover{
-    transform:scale(1.05);
-}
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      animation: fadeUp 1s ease;
+    }
 
-.section{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    margin-bottom:25px;
-    box-shadow:0 6px 20px rgba(0,0,0,.06);
-}
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s;
+    }
 
-.section h2{
-    margin-bottom:15px;
-}
+    .card:hover {
+      transform: scale(1.02);
+      border-color: #38bdf8;
+    }
 
-.section h3{
-    margin-top:20px;
-    margin-bottom:10px;
-}
+    h2 {
+      margin-bottom: 10px;
+      color: #38bdf8;
+    }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:18px;
-}
+    ul {
+      padding-left: 20px;
+      color: #cbd5e1;
+    }
 
-.card{
-    background:#f9fafb;
-    padding:18px;
-    border-radius:14px;
-    border-left:4px solid #6366f1;
-    transition:transform .3s ease, box-shadow .3s ease;
-}
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #64748b;
+    }
 
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 12px 24px rgba(0,0,0,.12);
-}
+    /* Animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.highlight{
-    background:#111827;
-    color:white;
-    border-left:4px solid #22c55e;
-}
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.highlight .tag{
-    background:#22c55e;
-    color:black;
-}
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-.reveal{
-    opacity:0;
-    transform:translateY(30px);
-    transition:all .8s ease;
-}
+    /* Simple floating background effect */
+    .blob {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      background: #38bdf8;
+      filter: blur(120px);
+      opacity: 0.2;
+      border-radius: 50%;
+      animation: float 8s infinite ease-in-out;
+      z-index: -1;
+    }
 
-.reveal.active{
-    opacity:1;
-    transform:translateY(0);
-}
+    .blob:nth-child(1) { top: 10%; left: 10%; }
+    .blob:nth-child(2) { bottom: 10%; right: 10%; background: #a78bfa; }
 
-.footer{
-    text-align:center;
-    color:#6b7280;
-    padding:20px;
-}
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-30px); }
+    }
 
-@keyframes slideInLeft{
-    from{opacity:0;transform:translateX(-40px);}
-    to{opacity:1;transform:translateX(0);}
-}
-
-@media(max-width:800px){
-    .hero{padding:25px;}
-    .hero h1{font-size:2.2rem;}
-}
-</style>
+  </style>
 </head>
+
 <body>
 
-<div class="container">
+  <div class="blob"></div>
+  <div class="blob"></div>
 
-<div class="hero reveal active">
-<h1>Xavier Henderson</h1>
-<p class="subtitle">
-Food Science focused student exploring real-world systems in food, plants, and retail environments through cooking, gardening, volunteering, and hands-on learning experiences.
-</p>
+  <header>
+    <h1>XAVIER</h1>
+    <p>Future Food Science Student • Gardening • Retail Experience</p>
+  </header>
 
-<div class="hero-tags">
-<span class="tag">Food Science</span>
-<span class="tag">Gardening</span>
-<span class="tag">Cooking</span>
-<span class="tag">Retail</span>
-<span class="tag">Volunteering</span>
-</div>
-</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#journey">Journey</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<div class="section reveal">
-<h2>About Me</h2>
-<p>
-I am a college student interested in food science, cooking, and hands-on learning experiences. I enjoy understanding how food, plants, and people interact within larger systems and how science can be applied to solve real-world challenges.
-</p>
-<br>
-<p>
-Through gardening, retail work, volunteering, and cooking, I have developed communication skills, responsibility, problem-solving abilities, and a growing interest in the science behind food production, food quality, and agricultural systems.
-</p>
-</div>
+  <section id="about">
+    <div class="card">
+      <h2>About Me</h2>
+      <p>
+        I am Xavier Henderson. I am 17 and currently in college working toward my associate’s degree.
+        I’m interested in food science, gardening, cooking, and hands-on work. I also enjoy gaming, reading,
+        volunteering, and learning new skills.
+      </p>
+    </div>
+  </section>
 
-<div class="section reveal">
-<h2>Experience & Activities</h2>
+  <section id="journey">
+    <div class="card">
+      <h2>My Journey</h2>
+      <ul>
+        <li>High school graduate with associate’s degree</li>
+        <li>5 years soccer experience</li>
+        <li>1 year tennis experience</li>
+        <li>Retail and gardening experience</li>
+        <li>Exploring food science as a career path</li>
+      </ul>
+    </div>
+  </section>
 
-<h3>Gardening Experience</h3>
-<p>
-Gardening has taught me patience, consistency, and observation. Through caring for plants and monitoring their growth, I have gained a better understanding of how environmental factors influence living systems.
-</p>
+  <section id="skills">
+    <div class="card">
+      <h2>Skills</h2>
+      <ul>
+        <li>Gardening & plant care</li>
+        <li>Customer service (retail)</li>
+        <li>Team sports experience</li>
+        <li>Cooking & food preparation</li>
+        <li>Time management & volunteering</li>
+      </ul>
+    </div>
+  </section>
 
-<h3>Retail Experience</h3>
-<p>
-Working in retail has helped me develop customer service skills, communication, organization, and adaptability while learning how to work effectively in fast-paced environments.
-</p>
+  <section id="contact">
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Email: yourname@example.com</p>
+      <p>Location: Maryland, USA</p>
+    </div>
+  </section>
 
-<h3>Volunteer Work</h3>
-<p>
-Volunteering has strengthened my sense of responsibility and teamwork through supporting community activities and contributing toward shared goals.
-</p>
-</div>
-
-<div class="section reveal">
-<h2>Activities & Projects</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Gardening Log</h3>
-<p>Tracked plant growth patterns and observed environmental effects on development.</p>
-<span class="tag">Observation</span>
-<span class="tag">Consistency</span>
-</div>
-
-<div class="card">
-<h3>Retail Experience</h3>
-<p>Developed customer service, communication, and organizational skills.</p>
-<span class="tag">Communication</span>
-<span class="tag">Organization</span>
-</div>
-
-<div class="card">
-<h3>Volunteering Work</h3>
-<p>Participated in community-focused activities building teamwork and leadership.</p>
-<span class="tag">Teamwork</span>
-<span class="tag">Leadership</span>
-</div>
-
-<div class="card highlight">
-<h3>Understanding Food Through Cooking</h3>
-
-<p><b>Hook:</b> How do ingredient choices, preparation methods, and cooking conditions affect the quality, safety, and characteristics of food?</p>
-<br>
-<p><b>Tech / Tools:</b> Recipe analysis, cooking experimentation, observation, ingredient comparisons, temperature control, and research.</p>
-<br>
-<p><b>Proof:</b> Through regular cooking practice, I experiment with ingredients and preparation techniques to understand how small changes influence flavor, texture, appearance, and overall food quality.</p>
-<br>
-<span class="tag">Food Science</span>
-<span class="tag">Cooking</span>
-<span class="tag">Research</span>
-</div>
-
-</div>
-</div>
-
-<div class="section reveal">
-<h2>Cooking & Food Science</h2>
-<p>
-Cooking has become one of my strongest interests because it combines creativity, problem-solving, and science. I enjoy learning how ingredients interact during preparation and how factors such as temperature, moisture, texture, and timing affect the final product.
-</p>
-<br>
-<p>
-Beyond following recipes, I like experimenting with different techniques and observing how changes in ingredients or preparation methods influence flavor, appearance, and consistency. These experiences have increased my interest in food science by helping me understand that food production involves chemistry, biology, safety, and quality control working together.
-</p>
-<br>
-<p>
-My long-term goal is to continue exploring the scientific side of food and gain experience in areas such as food development, food safety, nutrition, and food processing.
-</p>
-</div>
-
-<div class="section reveal">
-<h2>Future Goals</h2>
-<p>
-I hope to continue developing my understanding of food systems, food safety, product development, and food production processes through higher education and hands-on experiences.
-</p>
-<br>
-<p>
-My long-term goal is to combine scientific knowledge with practical problem-solving in a food-related career and contribute to improving the quality, safety, and accessibility of food.
-</p>
-</div>
-
-<div class="footer">
-Portfolio Website • Xavier Henderson
-</div>
-
-</div>
-
-<script>
-const reveals = document.querySelectorAll('.reveal');
-
-function revealOnScroll() {
-  reveals.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    const trigger = window.innerHeight * 0.85;
-
-    if(top < trigger){
-      section.classList.add('active');
-    }
-  });
-}
-
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
-</script>
+  <footer>
+    <p>© 2026 Xavier Portfolio</p>
+  </footer>
 
 </body>
 </html>
